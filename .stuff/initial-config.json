@@ -1,0 +1,104 @@
+{
+  "default": {
+    "ExampleModule": {
+      "dispatchNum": "noa",
+      "options": [
+        "Hi",
+        "How are you",
+        "Hello World",
+        "Backend example"
+      ]
+    },
+    "ForceUpgrade": {
+      "app": "1.1.0",
+      "browser": {
+        "chrome": "80.0.3987.148"
+      }
+    },
+    "HttpServer": {
+      "bodyParserLimit": 200,
+      "cors": {
+        "headers": [
+          "x-session-id",
+          "x-browser-type",
+          "x-app-version"
+        ],
+        "methods": [
+          "GET",
+          "POST"
+        ]
+      },
+      "host": "localhost"
+    },
+    "JiraBugReportIntegrator": {
+      "jiraProject": "BR"
+    },
+    "JiraModule": {
+      "auth": {
+        "apiKey": "jira-api-key",
+        "email": "user-email"
+      }
+    },
+    "SlackModule": {
+      "throttlingTime": 60000,
+      "token": "slack-token"
+    },
+    "Slack_ServerApiError": {
+      "exclude": [
+        "4 DEADLINE_EXCEEDED: Deadline Exceeded",
+        "14 UNAVAILABLE: Connect Failed",
+        "No connection established"
+      ],
+      "headers": [
+        "x-test"
+      ]
+    },
+    "isDebug": true,
+    "name": "default"
+  },
+  "dev": {
+    "HttpServer": {
+      "baseUrl": "https:////us-central1-${PROJECT_ID}-dev.cloudfunctions.net",
+      "cors": {
+        "origins": [
+          "https://${PROJECT_ID}-dev.firebaseapp.com"
+        ]
+      }
+    },
+    "SlackModule": {
+      "defaultChannel": "__critical__"
+    },
+    "isDebug": true,
+    "name": "dev"
+  },
+  "staging": {
+    "HttpServer": {
+      "baseUrl": "https:////us-central1-${PROJECT_ID}-staging.cloudfunctions.net",
+      "cors": {
+        "origins": [
+          "https://${PROJECT_ID}-staging.firebaseapp.com"
+        ]
+      }
+    },
+    "SlackModule": {
+      "defaultChannel": "__critical__"
+    },
+    "isDebug": true,
+    "name": "staging"
+  },
+  "prod": {
+    "HttpServer": {
+      "baseUrl": "https:////us-central1-${PROJECT_ID}.cloudfunctions.net",
+      "cors": {
+        "origins": [
+          "https://${PROJECT_ID}.firebaseapp.com"
+        ]
+      }
+    },
+    "SlackModule": {
+      "defaultChannel": "__critical__"
+    },
+    "isDebug": false,
+    "name": "prod"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "functions": {
+    "source": "app-backend",
+    "ignore": [
+      "src",
+      ".config",
+      "dist-test",
+      "deploy.js",
+      "node_modules"
+    ],
+    "predeploy": [
+      "rm ./app-backend/package-lock.json",
+      "npm --prefix ./app-backend install",
+      "npm --prefix ./app-backend run build"
+    ]
+  },
+  "hosting": {
+    "public": "app-frontend/dist/dev",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

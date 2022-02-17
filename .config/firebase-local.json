@@ -1,0 +1,30 @@
+{
+  "functions": {
+    "source": "app-backend",
+    "ignore": [
+      "src",
+      ".config",
+      "dist-test",
+      "deploy.js",
+      "node_modules"
+    ],
+    "predeploy": [
+      "echo \"Local environment is not deployable... Aborting...\" && exit 2"
+    ]
+  },
+  "emulators": {
+    "functions": {
+      "port": "8201"
+    },
+    "database": {
+      "port": "8202"
+    },
+    "firestore": {
+      "port": "8203"
+    },
+    "ui": {
+      "enabled": true,
+      "port": "8209"
+    }
+  }
+}

@@ -1,9 +1,18 @@
 import * as React from 'react';
-import {ICONS, IconsType} from "@res/icons";
-import {COLORS, ColorsType} from "@res/colors";
+import {
+	ICONS,
+	IconsType
+} from "@res/icons";
+import {
+	COLORS,
+	ColorsType
+} from "@res/colors";
 import {_keys} from "@nu-art/ts-common";
 import * as emotion from "emotion";
-import {BaseResource_State, PgDev_BaseResource} from "./PgDev_BaseResource";
+import {
+	BaseResource_State,
+	PgDev_BaseResource
+} from "./PgDev_BaseResource";
 
 type State = BaseResource_State & {
 	icon: keyof IconsType
@@ -11,11 +20,11 @@ type State = BaseResource_State & {
 
 const tdStyle = emotion.css({padding: "10px", height: "80px", float: "left"});
 
-export class PgDev_Icons
+ class Pg_Component
 	extends PgDev_BaseResource<State> {
 
 	constructor(props: {}) {
-		super(props, "DevTool - Icons");
+		super(props, PgDev_Icons.name);
 		this.state = {
 			icon: _keys(ICONS)[0],
 			color: _keys(COLORS)[0],
@@ -39,3 +48,5 @@ export class PgDev_Icons
 		</div>;
 	}
 }
+
+export const PgDev_Icons = {name: "DevTool - Icons",renderer:Pg_Component};

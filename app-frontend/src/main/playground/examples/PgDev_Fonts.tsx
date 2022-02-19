@@ -23,11 +23,11 @@ type State = BaseResource_State & {
 
 const tdStyle = emotion.css({padding: "10px", height: "80px", float: "left"});
 
-export class PgDev_Fonts
+ class Pg_Component
 	extends PgDev_BaseResource<State> {
 
 	constructor(props: {}) {
-		super(props, "DevTool - Fonts");
+		super(props, PgDev_Fonts.name);
 		this.state = {
 			font: _keys(FONTS)[0],
 			color: _keys(COLORS)[0],
@@ -69,3 +69,5 @@ export class PgDev_Fonts
 		</div>;
 	}
 }
+
+export const PgDev_Fonts = {name: "DevTool - Fonts",renderer:Pg_Component};

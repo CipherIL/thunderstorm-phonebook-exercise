@@ -24,12 +24,12 @@ type State = {
 
 const tdStyle = emotion.css({padding: "3px", float: "left"});
 
-export class PgDev_Locales
+class Pg_Component
 	extends AppPage<{}, State> {
 
 
 	constructor(props: {}) {
-		super(props, "DevTool - Locales");
+		super(props, PgDev_Locales.name);
 		this.state = {
 			language: LocaleModule.getActiveLanguage(),
 			stringKey: _keys(LOCALE)[0],
@@ -141,3 +141,5 @@ export class PgDev_Locales
 		);
 	}
 }
+
+export const PgDev_Locales = {name: "DevTool - Locales", renderer: Pg_Component};

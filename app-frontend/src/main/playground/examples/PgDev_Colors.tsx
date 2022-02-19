@@ -18,7 +18,7 @@ const divStyle = emotion.css({
 	                             border: "1px solid black"
                              });
 
-export class PgDev_Colors
+class Pg_Component
 	extends AppPage<{}, { selected?: keyof ColorsType }> {
 
 	private createDiv = (key: keyof ColorsType, color: () => string) => {
@@ -31,7 +31,7 @@ export class PgDev_Colors
 	};
 
 	constructor(p: {}) {
-		super(p, "DevTool - Color");
+		super(p, PgDev_Colors.name);
 		this.state = {selected: _keys(COLORS)[0]};
 	}
 
@@ -56,3 +56,5 @@ export class PgDev_Colors
 			enable={false}/>;
 	}
 }
+
+export const PgDev_Colors = {name: "DevTool - Color", renderer: Pg_Component};

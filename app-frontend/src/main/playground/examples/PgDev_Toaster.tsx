@@ -11,11 +11,11 @@ import {
 	SuccessToast
 } from "../../themes/toasts";
 
-export class PgDev_Toaster
+class Pg_Component
 	extends AppPage<{}, { selected?: keyof ColorsType }> {
 
 	constructor(p: {}) {
-		super(p, "DevTool - Toaster");
+		super(p, PgDev_Toaster.name);
 	}
 
 	showAppToasterSuccessExample = () => {
@@ -62,4 +62,4 @@ export class PgDev_Toaster
 	}
 }
 
-
+export const PgDev_Toaster = {name: "DevTool - Toaster", renderer: Pg_Component};

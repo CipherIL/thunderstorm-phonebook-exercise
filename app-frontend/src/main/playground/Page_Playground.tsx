@@ -17,7 +17,10 @@
  */
 
 import * as React from 'react';
-import {Playground, PlaygroundScreen} from '@nu-art/thunderstorm/frontend';
+import {
+	Playground,
+	PlaygroundScreen
+} from '@nu-art/thunderstorm/frontend';
 import {ICONS} from '@res/icons';
 import {COLORS} from '@res/colors';
 import {BugReport} from '@nu-art/bug-report/frontend';
@@ -27,6 +30,7 @@ import {PgDev_Fonts} from './examples/PgDev_Fonts';
 import {PgDev_Locales} from './examples/PgDev_Locales';
 import {PgDev_Toaster} from './examples/PgDev_Toaster';
 import {PgDev_IndexDB} from './examples/PgDev_IndexDB';
+import {PgTest_Sample1} from "./test/PgTest_Sample1";
 
 export const selectStyles = {
 	container: (provided: any) => ({
@@ -84,12 +88,13 @@ export class Page_Playground
 
 	getScreens(): PlaygroundScreen[] {
 		return [
-			{name: 'Toaster', renderer: PgDev_Toaster},
-			{name: 'DEV-IndexDB', renderer: PgDev_IndexDB},
-			{name: 'DEV-Locales', renderer: PgDev_Locales},
-			{name: 'DEV-Colors', renderer: PgDev_Colors},
-			{name: 'DEV-Fonts', renderer: PgDev_Fonts},
-			{name: 'DEV-Icons', renderer: PgDev_Icons},
+			PgDev_Toaster,
+			PgDev_IndexDB,
+			PgDev_Locales,
+			PgDev_Fonts,
+			PgDev_Icons,
+			PgDev_Colors,
+			PgTest_Sample1,
 		];
 	}
 

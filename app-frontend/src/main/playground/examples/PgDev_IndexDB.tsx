@@ -20,8 +20,8 @@ const typeValue5: Type1 = {key: '1111', _id: 'bbbb', content: 'Some text'};
 const typeValue6: Type1 = {key: '2222', _id: 'cccc', content: 'text other'};
 const typeValue7: Type1 = {key: '3333', _id: 'dddd', content: 'send texture'};
 const typeValue8: Type1 = {key: '2222', _id: 'eeee', content: 'pah male texul'};
-
-export class PgDev_IndexDB
+ 
+class Pg_Component
 	extends AppPage<{}, { regexp?: string, results?: Type1[] }> {
 	private dbType1!: IndexedDB<Type1, 'key' | '_id'>;
 	private ashpa!: IndexedDB<any, any>;
@@ -29,7 +29,7 @@ export class PgDev_IndexDB
 	private regexp = new StorageKey<string>('regexp-search-test');
 
 	constructor(p: {}) {
-		super(p, 'DevTool - IndexDB');
+		super(p, PgDev_IndexDB.name);
 		this.state = {regexp: this.regexp.get('')};
 	}
 
@@ -82,4 +82,4 @@ export class PgDev_IndexDB
 	}
 }
 
-
+export const PgDev_IndexDB = {name: "DevTool - IndexDB",renderer:Pg_Component};

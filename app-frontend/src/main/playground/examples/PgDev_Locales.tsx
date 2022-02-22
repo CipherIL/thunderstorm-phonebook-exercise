@@ -1,20 +1,11 @@
 import * as React from 'react';
-import {COLORS} from "@res/colors";
-import {_keys} from "@nu-art/ts-common";
-import * as emotion from "emotion";
-import {
-	AdapterBuilder,
-	AppPage,
-	DropDown,
-	Language,
-	LocaleModule,
-	NodeRendererProps,
-	TS_Input,
-	TS_TextArea
-} from "@nu-art/thunderstorm/frontend";
-import {LOCALE} from "@res/locale";
-import {AppStrings} from "@res/localization/AppLanguage";
-import {ICONS} from "@res/icons";
+import {COLORS} from '@res/colors';
+import {_keys} from '@nu-art/ts-common';
+import * as emotion from 'emotion';
+import {AdapterBuilder, AppPage, Language, LocaleModule, NodeRendererProps, TS_DropDown, TS_Input, TS_TextArea} from '@nu-art/thunderstorm/frontend';
+import {LOCALE} from '@res/locale';
+import {AppStrings} from '@res/localization/AppLanguage';
+import {ICONS} from '@res/icons';
 
 type State = {
 	language: Language
@@ -87,7 +78,7 @@ class Pg_Component
 
 		return <div className="ll_h_c" style={{minHeight: "30px", marginBottom: "12px"}}>
 			<div style={{minWidth: "100px", marginRight: "16px"}}>Select a Language:</div>
-			<DropDown<Language>
+			<TS_DropDown<Language>
 				adapter={adapter}
 				onSelected={selected => {
 					LocaleModule.setActiveLocale(selected.shortLocale);

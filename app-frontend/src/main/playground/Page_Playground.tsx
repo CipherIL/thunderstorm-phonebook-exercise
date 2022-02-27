@@ -31,6 +31,7 @@ import {PgDev_Locales} from './examples/PgDev_Locales';
 import {PgDev_Toaster} from './examples/PgDev_Toaster';
 import {PgDev_IndexDB} from './examples/PgDev_IndexDB';
 import {PgTest_Sample1} from "./test/PgTest_Sample1";
+import {PgDev_Phonebook} from './examples/PgDev_Phonebook';
 
 export const selectStyles = {
 	container: (provided: any) => ({
@@ -95,6 +96,7 @@ export class Page_Playground
 			PgDev_Icons,
 			PgDev_Colors,
 			PgTest_Sample1,
+			PgDev_Phonebook,
 		];
 	}
 
